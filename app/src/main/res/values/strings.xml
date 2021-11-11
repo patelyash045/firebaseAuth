@@ -2,4 +2,6 @@
     <string name="app_name">firebaseAuth</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_in">Sign In</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_password">Enter Password</string>
 </resources>
