@@ -3,10 +3,15 @@ package com.yash.firebaseauth;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,7 +24,6 @@ public class SignupActivity extends AppCompatActivity {
 
     private EditText EtEmail;
     private EditText EtPass;
-    private Button btnSignup;
     private FirebaseAuth auth;
 
     @Override
@@ -29,8 +33,22 @@ public class SignupActivity extends AppCompatActivity {
 
         EtEmail = findViewById(R.id.EtEmail);
         EtPass = findViewById(R.id.EtPass);
-        btnSignup = findViewById(R.id.btnSignup);
+        Button btnSignup = findViewById(R.id.btnSignup);
+        CheckBox showPass = findViewById(R.id.show_password);
         auth = FirebaseAuth.getInstance();
+
+        showPass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked){
+                    EtPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                } else {
+                    EtPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
+
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +63,9 @@ public class SignupActivity extends AppCompatActivity {
                 {
                     regis(email1,pass1);
                 }
+
+                EtEmail.setText("");
+                EtPass.setText("");
             }
         });
 

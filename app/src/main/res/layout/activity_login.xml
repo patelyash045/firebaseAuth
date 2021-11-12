@@ -45,6 +45,8 @@
         app:layout_constraintVertical_bias="0.15"
         tools:ignore="MissingConstraints" />
 
+
+
     <EditText
         android:id="@+id/etPass"
         android:layout_width="match_parent"
@@ -68,6 +70,62 @@
         app:layout_constraintVertical_bias="0.05"
         tools:ignore="MissingConstraints" />
 
+<!--
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etMat"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="30dp"
+        app:passwordToggleEnabled="true"
+
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail"
+        app:layout_constraintVertical_bias="0.05">  -->
+<!--
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPass"
+            android:background="@drawable/custom_input"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="30dp"
+
+
+
+            android:backgroundTint="@color/light_green"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:hint="@string/enter_password"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:textSize="20sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail"
+            app:layout_constraintVertical_bias="0.05"
+            />
+            -->
+        <!--
+    </com.google.android.material.textfield.TextInputLayout>
+
+    -->
+
+    <CheckBox
+        android:id="@+id/show_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/show_password"
+        app:layout_constraintTop_toBottomOf="@+id/etPass" />
+
     <Button
         android:id="@+id/btnSignin"
         android:layout_width="match_parent"
@@ -79,7 +137,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPass"
-        app:layout_constraintVertical_bias="0.10" />
+        app:layout_constraintTop_toBottomOf="@+id/show_password"
+        app:layout_constraintVertical_bias="0.05" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
